@@ -30,3 +30,13 @@ startup commands
 
 # to kill the process related to the port on which local development server is running
 	sudo lsof -t -i tcp:8000 | xargs kill -9
+
+# manage.py look up commands
+	python manage.py
+
+# Syncing models with the database
+	python manage.py makemigrations
+	** after changes made, apply them in the database
+	python manage.py migrate
+
+
