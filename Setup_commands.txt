@@ -39,4 +39,7 @@ startup commands
 	** after changes made, apply them in the database
 	python manage.py migrate
 
+# django shell,access model object
+	python manage.py shell
+
 
