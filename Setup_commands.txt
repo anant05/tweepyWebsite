@@ -1,0 +1,32 @@
+startup commands
+
+# Download virtual environment
+	pip install virtualenv
+
+# Declaring tweepyWebsite as virtual env 
+	cd tweepyWebsite
+	virtualenv .
+
+# Activate virtual environment
+	source bin/activate
+
+# Checking the packages installed in the virtual environment
+	pip freeze
+
+# Install django 1.11 in the virtual env.
+	pip install django==1.11
+
+# Start new django project
+	django-admin.py startproject src
+
+# run local development server
+	python manage.py runserver
+
+# Running migration to setup database
+	python manage.py migrate
+
+# Create superuser
+	python manage.py createsuperuser
+
+# to kill the process related to the port on which local development server is running
+	sudo lsof -t -i tcp:8000 | xargs kill -9
