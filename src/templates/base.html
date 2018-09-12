@@ -1,8 +1,9 @@
 <!--DOCTYPE html -->
+{% load staticfiles %}
 <html>
 <head>
 <title>{% block head_title %}Tweepy Django Website{% endblock head_title%}</title>
-<link rel='stylesheet' href='/static/css/base.css'/>
+<link rel='stylesheet' href='{% static "css/base.css" %}'/>
 </head>
 <style>
 {% block style%}{% endblock style %}
