@@ -42,4 +42,6 @@ startup commands
 # django shell,access model object
 	python manage.py shell
 
+# Once staic configuration are setup in settings.py and main urls.py
+	python manage.py collectstatic
 
