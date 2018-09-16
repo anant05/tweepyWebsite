@@ -17,7 +17,8 @@ from .forms import PostForm
 
 
 def post_create(request):
-	form = PostForm(request.POST or None) # Ensures the validation for mandatory fields 
+	form = PostForm(request.POST or None, request.FILES or None) # Ensures the validation for mandatory fields 
+	# request.FILE calls in file/image data if its there.
 	if form.is_valid():
 		instance = form.save(commit=False)
 		# print form.cleaned_data.get("title")
@@ -70,13 +71,10 @@ def post_list(request):
 	return render(request, "post_list.html", context)
 	#return HttpResponse("<h1>List!!</h1>")
 
-def listing(request):
-    contact_list = Contacts.objects.all()
-    
 
 def post_update(request, id=None):
 	instance = get_object_or_404(Post, id=id)
-	form = PostForm(request.POST or None, instance=instance) 
+	form = PostForm(request.POST or None, request.FILES or None, instance=instance) 
 	if form.is_valid():
 		instance = form.save(commit=False)
 		instance.save()

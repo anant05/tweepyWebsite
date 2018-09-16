@@ -10,7 +10,10 @@
 {% for object in object_list %}
 <div class="row">
 	<div class="col-sm-12">
-		<div class="card" style="width: 18rem;">
+		<div class="card" style="width: 50rem;">
+            {% if object.image %}
+            <img src="{{object.image.url}}" class="img-responsive" />
+            {% endif %}
 	  		<div class="card-body">
 	    		<h5 class="card-title"><a href='{{ object.get_absolute_url }}'>{{object.title }}</a> <small>{{ object.timestamp | timesince }} ago</small></h5>
 			    <p class="card-text">{{ object.content | linebreaks | truncatechars:120}}</p>
